@@ -24,13 +24,11 @@ public sealed class CustomersController : ControllerBase
     }
 
     [HttpPost("")]
-    [ProducesResponseType(StatusCodes.Status202Accepted)]
+    [ProducesResponseType(typeof(CustomerCreatedResponse), StatusCodes.Status200OK)]
     [ProducesApplicationNotificationResponse(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> PostAsync([FromBody] AddCustomerRequest request)
     {
-        await _service.AddAsync(request);
-
-        return Accepted();
+        return Ok(await _service.AddAsync(request));
     }
 
     [HttpGet("")]

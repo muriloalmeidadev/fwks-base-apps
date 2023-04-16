@@ -5,7 +5,8 @@ ARG ENVIRONMENT
 
 COPY ui/ .
 
-RUN npm i && \
+RUN npm install -g pnpm && \
+    pnpm install && \
     npm run build-${ENVIRONMENT}
 
 FROM nginx:alpine

@@ -7,6 +7,6 @@ namespace Fwks.FwksApp.Core.Abstractions.Services;
 
 public interface ICustomerService
 {
-    Task AddAsync(AddCustomerRequest request);
+    Task<CustomerCreatedResponse> AddAsync(AddCustomerRequest request);
     Task<Page<CustomerResponse>> FindByFilterAsync(GetCustomerByNameRequest filter);
 }

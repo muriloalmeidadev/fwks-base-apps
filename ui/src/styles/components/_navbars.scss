@@ -76,25 +76,25 @@ mat-drawer-container.sidenav {
                         margin-right: 0.5rem;
                     }
 
-                    // @media (min-width: 960px) {
-                    //     &.nav-list-item {
-                    //         display: block;
-                    //     }
+                    @media (min-width: 960px) {
+                        &.nav-item {
+                            display: block;
+                        }
 
-                    //     &.nav-list-item:last-child {
-                    //         display: none;
-                    //     }
-                    // }
+                        &.nav-item:last-child {
+                            display: none;
+                        }
+                    }
 
-                    // @media (max-width: 960px) {
-                    //     &.nav-list-item {
-                    //         display: none;
-                    //     }
+                    @media (max-width: 960px) {
+                        &.nav-item {
+                            display: none;
+                        }
 
-                    //     &.nav-list-item:last-child {
-                    //         display: block;
-                    //     }
-                    // }
+                        &.nav-item:last-child {
+                            display: block;
+                        }
+                    }
 
                     &.nav-divider {
                         margin: 0 auto;

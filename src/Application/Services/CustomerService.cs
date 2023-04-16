@@ -38,18 +38,23 @@ internal sealed class CustomerService : ICustomerService
         _transaction = transaction;
     }
 
-    public async Task AddAsync(AddCustomerRequest request)
+    public async Task<CustomerCreatedResponse> AddAsync(AddCustomerRequest request)
     {
-        await Task.WhenAll(
-            AddToMongoAsync(request),
-            AddToPostgresAsync(request));
+        var guid = Guid.NewGuid();
 
-        async Task AddToMongoAsync(AddCustomerRequest request)
+        await Task.WhenAll(
+            AddToMongoAsync(request, guid), 
+            AddToPostgresAsync(request, guid));
+
+        return new(guid);
+
+        async Task AddToMongoAsync(AddCustomerRequest request, Guid guid)
         {
             try
             {
                 await _mongoRepository.AddAsync(new()
                 {
+                    Id = guid,
                     Name = request.Name,
                     Email = request.Email,
                     DateOfBirth = request.DateOfBirth,
@@ -64,7 +69,7 @@ internal sealed class CustomerService : ICustomerService
             }
         }
 
-        async Task AddToPostgresAsync(AddCustomerRequest request)
+        async Task AddToPostgresAsync(AddCustomerRequest request, Guid guid)
         {
             try
             {
@@ -72,6 +77,7 @@ internal sealed class CustomerService : ICustomerService
 
                 await _postgresRepository.AddAsync(new()
                 {
+                    Guid = guid,
                     Name = request.Name,
                     Email = request.Email,
                     DateOfBirth = dateOfBirth,

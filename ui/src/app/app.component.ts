@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
     constructor(
         public ctx: AppContextService) {
-        this.title = 'Fwks UI'
+        this.title = environment.title
         this.envName = environment.name
         this.showEnvironment = !environment.production
     }

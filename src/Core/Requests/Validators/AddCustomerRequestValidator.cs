@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Fwks.Core.Extensions;
 
-namespace Fwks.FwksApp.Core.Models.Requests.Validators;
+namespace Fwks.FwksApp.Core.Requests.Validators;
 
 public class AddCustomerRequestValidator : AbstractValidator<AddCustomerRequest>
 {

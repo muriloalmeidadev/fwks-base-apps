@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Fwks.Core.Domain;
-using Fwks.FwksApp.Core.Models.Requests;
-using Fwks.FwksApp.Core.Models.Responses;
+using Fwks.FwksApp.Core.Requests;
+using Fwks.FwksApp.Core.Responses;
 
 namespace Fwks.FwksApp.Core.Abstractions.Services;
 

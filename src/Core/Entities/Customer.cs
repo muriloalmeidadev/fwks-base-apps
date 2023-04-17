@@ -16,7 +16,7 @@ public sealed class CustomerDocument : Entity<Guid>
     public string PhoneNumber { get; set; }
 }
 
-public sealed class Customer : Entity<int>
+public sealed class CustomerEntity : Entity<int>
 {
     public Guid Guid { get; set; } = Guid.NewGuid();
     public required string Name { get; set; }

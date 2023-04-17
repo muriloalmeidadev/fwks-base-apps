@@ -31,7 +31,7 @@ export class NavbarComponent {
 
     constructor(
         public context: AppContextService) {
-        this.title = 'Fwks UI'
+        this.title = environment.title
         this.environment = environment.name
         this.color = 'primary'
         this.sidenav = false

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Fwks.FwksApp.Infra.Postgres.Configuration;
 
-public sealed class CustomerConfiguration : EntityTypeConfiguration<Customer, int>
+public sealed class CustomerConfiguration : EntityTypeConfiguration<CustomerEntity, int>
 {
-    public override void Configure(EntityTypeBuilder<Customer> builder)
+    public override void Configure(EntityTypeBuilder<CustomerEntity> builder)
     {
         base.Configure(builder);
 

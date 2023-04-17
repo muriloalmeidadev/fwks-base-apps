@@ -1,7 +1,7 @@
 ﻿using Fwks.Core.Domain;
 using Fwks.FwksApp.Core.Enums;
 
-namespace Fwks.FwksApp.Core.Models.Requests;
+namespace Fwks.FwksApp.Core.Requests;
 
 public sealed record GetCustomerByNameRequest(DbType DbType, string Name = "") : BasePageQuery;
 

@@ -20,6 +20,6 @@ public static class ConfigureServices
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
         return services
-            .AddScoped<ICustomerRepository<Customer, int>, CustomerRepository>();
+            .AddScoped<ICustomerRepository<CustomerEntity, int>, CustomerRepository>();
     }
 }

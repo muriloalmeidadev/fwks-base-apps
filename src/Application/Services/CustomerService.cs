@@ -10,8 +10,8 @@ using Fwks.FwksApp.Core.Abstractions.Repositories;
 using Fwks.FwksApp.Core.Abstractions.Services;
 using Fwks.FwksApp.Core.Entities;
 using Fwks.FwksApp.Core.Enums;
-using Fwks.FwksApp.Core.Models.Requests;
-using Fwks.FwksApp.Core.Models.Responses;
+using Fwks.FwksApp.Core.Requests;
+using Fwks.FwksApp.Core.Responses;
 using Microsoft.Extensions.Logging;
 
 namespace Fwks.FwksApp.Application.Services;
@@ -21,14 +21,14 @@ internal sealed class CustomerService : ICustomerService
     private readonly ILogger<CustomerService> _logger;
     private readonly INotificationContext _notifications;
     private readonly ITransactionService _transaction;
-    private readonly ICustomerRepository<Customer, int> _postgresRepository;
+    private readonly ICustomerRepository<CustomerEntity, int> _postgresRepository;
     private readonly ICustomerRepository<CustomerDocument, Guid> _mongoRepository;
 
     public CustomerService(
         ILogger<CustomerService> logger,
         INotificationContext notifications,
         ITransactionService transaction,
-        ICustomerRepository<Customer, int> postgresRepository,
+        ICustomerRepository<CustomerEntity, int> postgresRepository,
         ICustomerRepository<CustomerDocument, Guid> mongoRepository)
     {
         _logger = logger;
@@ -118,7 +118,7 @@ internal sealed class CustomerService : ICustomerService
             return customers.Transform(x =>
                 new CustomerResponse(x.Guid, x.Name, x.DateOfBirth.ToString(), x.Email, x.PhoneNumber));
 
-            Expression<Func<Customer, bool>> Predicate()
+            Expression<Func<CustomerEntity, bool>> Predicate()
             {
                 return request.Name.IsEmpty()
                     ? default

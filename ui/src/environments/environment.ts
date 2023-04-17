@@ -5,6 +5,7 @@
 export const environment = {
     production: false,
     name: 'dev',
+    title: 'Fwks UI',
     authServer: {
         url: 'http://localhost:9999/auth',
         realm: 'development',

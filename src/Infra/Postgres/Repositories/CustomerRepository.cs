@@ -5,7 +5,7 @@ using Fwks.Postgres.Repositories;
 
 namespace Fwks.FwksApp.Infra.Postgres.Repositories;
 
-public sealed class CustomerRepository : BaseRepository<Customer, int>, ICustomerRepository<Customer, int>
+public sealed class CustomerRepository : BaseRepository<CustomerEntity, int>, ICustomerRepository<CustomerEntity, int>
 {
     public CustomerRepository(
         AppServiceContext dbContext) : base(dbContext)

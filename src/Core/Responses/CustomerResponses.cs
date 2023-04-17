@@ -1,6 +1,6 @@
 using System;
 
-namespace Fwks.FwksApp.Core.Models.Responses;
+namespace Fwks.FwksApp.Core.Responses;
 
 public sealed record CustomerCreatedResponse(Guid Guid);
 

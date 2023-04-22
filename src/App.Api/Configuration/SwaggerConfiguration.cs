@@ -13,6 +13,8 @@ namespace Fwks.FwksApp.App.Api.Configuration;
 
 internal static class SwaggerConfiguration
 {
+    internal static string Title = "Fwks API Swagger";
+
     internal static IServiceCollection AddSwagger(this IServiceCollection services, AppSettings appSettings)
     {
         if (EnvironmentVariables.IsProduction())
@@ -42,7 +44,7 @@ internal static class SwaggerConfiguration
         if (EnvironmentVariables.IsProduction())
             return app;
 
-        app.UseDefaultSwaggerUI(apiProvider, "Fwks API Swagger");
+        app.UseDefaultSwaggerUI(apiProvider, Title);
 
         return app;
     }

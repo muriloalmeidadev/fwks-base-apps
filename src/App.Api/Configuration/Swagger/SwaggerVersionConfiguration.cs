@@ -20,7 +20,7 @@ internal sealed class SwaggerVersionConfiguration : IConfigureOptions<SwaggerGen
         foreach (var version in _versionProvider.ApiVersionDescriptions)
             options.SwaggerDoc(version.GroupName, new()
             {
-                Title = "Fwks API Swagger",
+                Title = SwaggerConfiguration.Title,
                 Version = version.GroupName
             });
     }

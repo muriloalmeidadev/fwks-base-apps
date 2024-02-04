@@ -1,0 +1,10 @@
+@if (session.active) {
+<button color="primary" [matMenuTriggerFor]="profile" mat-flat-button aria-label="menu button trigger for profile">Hello, $NAME</button>
+<mat-menu #profile="matMenu">
+    <button mat-menu-item>My Profile</button>
+    <mat-divider />
+    <button mat-menu-item>Log Out</button>
+</mat-menu>
+} @else {
+<button color="primary" mat-flat-button aria-label="log in button">Log In or Register</button>
+}

@@ -1,0 +1,14 @@
+<fwks-nav-top />
+
+<main class="mx-32 mt-4">
+
+    <article class="grid justify-center gap-2 m-4">
+        <h1 class="text-center"> Helpers </h1>
+        <section class="flex gap-2">
+            <button (click)="session.signIn()" mat-flat-button color="primary" type="button">Sign In</button>
+            <button (click)="session.signOut()" mat-flat-button color="primary" type="button">Sign Out</button>
+        </section>
+    </article>
+
+    <router-outlet />
+</main>

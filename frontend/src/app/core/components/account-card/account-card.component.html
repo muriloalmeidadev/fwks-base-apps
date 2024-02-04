@@ -1,0 +1,13 @@
+<section [style.border-color]="color" [class]="class" class="grid items-center h-32 border border-t-4 rounded border-e-4">
+    @if (url) {
+    <a class="text-center" [routerLink]="url">
+        <span class="text-2xl leading-3 lowercase">{{ title }}</span>
+    </a>
+    } @else {
+    <span class="text-2xl leading-3 text-center lowercase">{{ title }}</span>
+    }
+    <section class="flex items-center h-full mx-6">
+        <i [style.color]="color" [class]="icon" class="text-5xl fi"></i>
+        <span fwksCurrency class="text-2xl font-semibold ms-auto">{{ value }}</span>
+    </section>
+</section>

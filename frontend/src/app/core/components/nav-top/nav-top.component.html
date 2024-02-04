@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+
+    <img class="h-11" src="assets/app.png" alt="finances app icon">
+
+    <span class="m-2">
+        fwks<span class="font-semibold">baseapp</span>
+    </span>
+
+    @if (session.active) {
+    <section class="flex gap-2 me-auto">
+        <a routerLink="" mat-flat-button color="primary" aria-label="link 1 button">link #1</a>
+        <a mat-flat-button [matMenuTriggerFor]="egMenu" color="primary" aria-label="menu button">menu</a>
+        <a routerLink="" mat-flat-button color="primary" aria-label="link 2 button">link #2</a>
+    </section>
+    } @else {
+    <span class="ms-auto"></span>
+    }
+
+    <fwks-notifications-panel class="mx-2" />
+
+    <fwks-theme-selector />
+
+    <fwks-session-panel />
+
+</mat-toolbar>
+
+<mat-menu #egMenu>
+    <a mat-menu-item routerLink="">submenu #1</a>
+    <a mat-menu-item routerLink="">submenu #2</a>
+</mat-menu>

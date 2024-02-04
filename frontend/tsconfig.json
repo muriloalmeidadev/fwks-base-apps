@@ -1,0 +1,43 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "declaration": false,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "target": "ES2022",
+        "module": "ES2022",
+        "useDefineForClassFields": false,
+        "lib": [
+            "ES2022",
+            "dom"
+        ],
+        "typeRoots": [
+            "node_modules/@angular/material"
+        ],
+        "paths": {
+            "@fwks/components": ["./src/app/core/components/index.ts"],
+            "@fwks/directives": ["./src/app/core/directives/index.ts"],
+            "@fwks/functions": ["./src/app/core/functions/index.ts"],
+            "@fwks/pipes": ["./src/app/core/pipes/index.ts"],
+            "@fwks/providers": ["./src/app/core/providers/index.ts"],
+            "@fwks/services": ["./src/app/core/services/index.ts"],
+        }
+    },
+    "angularCompilerOptions": {
+        "enableI18nLegacyMessageIdFormat": false,
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
+    }
+}

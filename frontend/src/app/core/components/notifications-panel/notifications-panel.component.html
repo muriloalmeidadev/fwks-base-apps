@@ -1,0 +1,14 @@
+@if (session.active) {
+<button [matMenuTriggerFor]="notifications" color="basic" mat-icon-button aria-label="notification button">
+    <mat-icon matBadge="2" matBadgeSize="small" matBadgeColor="accent">notifications</mat-icon>
+</button>
+}
+
+<mat-menu class="max-w-unset" xPosition="before" #notifications>
+    <section class="flex items-center justify-center h-48 w-96 max-w-none">
+        <span>Center</span>
+    </section>
+</mat-menu>
+
+
+<!-- xPosition (before | after) and yPosition (above | below) at -->

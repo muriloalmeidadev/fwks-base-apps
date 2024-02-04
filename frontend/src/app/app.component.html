@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+    <button color="basic" mat-icon-button aria-label="sidemenu button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <span class="m-2">fwks App UI</span>
+
+    <section class="mr-auto">
+        <button color="primary" mat-flat-button aria-label="first menu button with text">First</button>
+
+        <button color="primary" [matMenuTriggerFor]="secondMenu" mat-flat-button aria-label="second menu button with text">Second (submenu)</button>
+        <mat-menu #secondMenu="matMenu">
+            <button mat-menu-item>Submenu No. 1</button>
+            <button mat-menu-item>Submenu No. 2</button>
+            <button mat-menu-item>Submenu No. 3</button>
+        </mat-menu>
+
+        <button color="primary" mat-flat-button aria-label="third menu button with text">Third</button>
+    </section>
+
+    @if (loggedIn) {
+    <button color="primary" [matMenuTriggerFor]="profile" mat-flat-button aria-label="menu button trigger for profile">Hello, $NAME</button>
+    <mat-menu #profile="matMenu">
+        <button mat-menu-item>My Profile</button>
+        <mat-divider />
+        <button mat-menu-item>Log Out</button>
+    </mat-menu>
+    } @else {
+    <button color="primary" mat-flat-button aria-label="log in button">Log In</button>
+    }
+</mat-toolbar>
+
+<router-outlet />
